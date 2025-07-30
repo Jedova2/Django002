@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {%include "app_2/scripts.html"%}
+    <title>HOME</title>
+</head>
+<body>
+    <body>
+  {% include "app_2/header.html" %}
+  <h1>PANTALLA HOME</h1>
+
+  <div class="container my-5">
+    <div class="row row-cols-1 row-cols-md-4 g-4">
+
+      <!-- Productos dinámicos desde la base de datos -->
+      {% for producto in productos %}
+      <div class="col">
+        <div class="card h-100 position-relative">
+          {% if producto.imagen %}
+            <img src="{{ producto.imagen.url }}" class="card-img-top" alt="{{ producto.nombre }}">
+          {% else %}
+            <img src="https://via.placeholder.com/450x300" class="card-img-top" alt="Sin imagen">
+          {% endif %}
+
+          <div class="card-body text-center">
+            <h5 class="card-title">{{ producto.nombre }}</h5>
+            <p class="card-text">${{ producto.precio }}</p>
+            <a href="#" class="btn btn-outline-dark">View options</a>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+
+      <!-- Tarjetas estáticas -->
+      <div class="col">
+        <div class="card h-100 position-relative">
+          <span class="badge bg-dark text-white badge-sale">Sale</span>
+          <img src="https://via.placeholder.com/450x300" class="card-img-top" alt="Producto">
+          <div class="card-body text-center">
+            <h5 class="card-title">Special Item</h5>
+            <p class="card-text"><span class="text-muted text-decoration-line-through">$20.00</span> $18.00</p>
+            <a href="#" class="btn btn-outline-dark">Add to cart</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="card h-100 position-relative">
+          <span class="badge bg-dark text-white badge-sale">Sale</span>
+          <img src="https://via.placeholder.com/450x300" class="card-img-top" alt="Producto">
+          <div class="card-body text-center">
+            <h5 class="card-title">Sale Item</h5>
+            <p class="card-text"><span class="text-muted text-decoration-line-through">$50.00</span> $25.00</p>
+            <a href="#" class="btn btn-outline-dark">Add to cart</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="card h-100 position-relative">
+          <img src="https://via.placeholder.com/450x300" class="card-img-top" alt="Producto">
+          <div class="card-body text-center">
+            <h5 class="card-title">Popular Item</h5>
+            <p class="card-text">$40.00</p>
+            <a href="#" class="btn btn-outline-dark">Add to cart</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="card h-100 position-relative">
+          <img src="https://via.placeholder.com/450x300" class="card-img-top" alt="Producto">
+          <div class="card-body text-center">
+            <h5 class="card-title">Fancy Product</h5>
+            <p class="card-text">$120.00 - $280.00</p>
+            <a href="#" class="btn btn-outline-dark">View options</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="card h-100 position-relative">
+          <span class="badge bg-dark text-white badge-sale">Sale</span>
+          <img src="https://via.placeholder.com/450x300" class="card-img-top" alt="Producto">
+          <div class="card-body text-center">
+            <h5 class="card-title">Special Item</h5>
+            <p class="card-text"><span class="text-muted text-decoration-line-through">$20.00</span> $18.00</p>
+            <a href="#" class="btn btn-outline-dark">Add to cart</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</body>
+
+</body>
+<footer>
+{%include "app_2/footer.html"%}
+</footer>
+
+</html>
